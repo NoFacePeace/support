@@ -1,0 +1,44 @@
+# 摘要
+随着互联网的普及以及Web技术的广泛使用，
+# 关键字：
+Mattermost Python Flask 工具集 系统集
+# 绪论
+## 研究背景
+随着互联网的普及以及Web技术的广泛使用，具备一定规模的公司都会在公司内部部署自己的局域网，并在局域网内搭建各种各样用于不同用途的系统或者服务。对于非技术人员来说，人性化的页面和简易的操作能够帮助他们快速的熟悉系统操作并进行相关的业务处理。
+然而，对于开发者来说，每次打开浏览器，输入登录信息,进行业务操作是一种重复性的动作，严重浪费时间，降低开发效率。作为一名开发者，我们的目标是要把日常重复性的工作交给计算机去完成，解放人力，把更多的时间，更多的精力花费技术难题的攻克上。
+鉴于以上的需求，思考一种行之有效的思路，提供一种可行的方案是至关重要的。经过长达三个月的实习实践，以及leader和导师给予的建议和指导，我得出了通过协作工具配套一个自己实现的支撑系统来串联各种系统的方案，并为之展开设计和实现。
+## 解决方案
+对于开发者团队来说，团队协作工具通常是必备的开发工具，最基本的功能包括通讯功能，可以有效的降低沟通成本。市面上常见的通讯工具诸如微信、QQ等，数据都是保存在服务商的服务器上，做不到数据的安全，也容易造成数据的丢失，最重要的一点是这类工具的扩展性极差，且完全掌握在服务商手里，用户无法实现自定义的设计需求，仅仅只能用于通讯。对于普通用户来说，可能能通讯就足够了，然而，对于开发者来说，这远远不够。开发者所需要的不仅是通讯，还希望在此之上能够根据自己的需求，实现自定义功能以及集成第三方的工具等等可扩展的功能。国外有许多诸如之类的优秀产品，下面我使用的团队协作工具Mattermost就是其中的一种，不仅提供了通讯功能，还集成多种可供选择开发工具，也允许用户自定义命令。
+架构在协作工具Mattermost的支撑系统，实际上一系列工具的集合，每个工具其实是一个命令，命令的背后对应一个自动化脚本，每个脚本对接一个系统，系统上的一系列操作通过命令的参数来调动。最终实现的效果是，在协作工具上输入命令以及对应的参数，代替我们在页面执行的操作，从而省去了每次打开浏览器，进行页面操作等重复性的动作。对于开发者来说，最熟悉的操作方式应该是在shell里输入命令，然后通过参数来进行不同的操作。这种和在协作工具输入命令的方式是类似。
+该课题最好的实践是在公司内部，因为公司有自己的局域网以及各种类型的系统去集成，然而，在公司外部无法连接公司内网，所以只能把学校作为实践场景，学校有图书馆系统、校园一卡通、个人信息门户系统，其中有查看个人信息功能、查看课程以及查看成绩功能，另外集成了发邮件的功能以及个人备忘录。
+# 系统开发关键技术和工具
+
+## 协作工具Mattermost
+目前国外比较流行的团队协作工具是一个叫做Slack的产品，Slack 是聊天群组 + 大规模工具集成 + 文件整合 + 统一搜索。截至2014年底，Slack 已经整合了电子邮件、短信、Google Drives、Twitter、Trello、Asana、GitHub 等 65 种工具和服务，把可以把各种碎片化的企业沟通和协作集中到一起。
+然而，Slack是一个商业产品，本身对外收费，不开源，且服务必需搭建在服务商的服务器上，对于国内的情况，更是不容乐观，因为存在可能被墙掉的可能性。
+Mattermost 是一个 Slack 的开源替代品。Mattermost 采用 Go 语言开发，这是一个开源的团队通讯服务。为团队带来跨 PC 和移动设备的消息、文件分享，提供归档和搜索功能。同时能提供接入第三方服务，这能完美接入我们自己设计的第三方支撑系统。
+## 编程语言Python
+Python是一门现代的高级编程语言，它的定位是“优雅”、“明确”、“简单”，虽然Python程序看上去简单易懂，但却支持广泛的应用程序开发，从简单的文字处理到WWW浏览器在到游戏，都有Python的用武之地，虽然Python一直被人们诟病它的速度，然而对于写一些工具或自动化脚本来说，由于使用用户是少部分人，所以性能问题基本可以忽略不计，因而把Python作为编写支撑系统的编程语言
+## Web框架Flask
+Flask是一个轻量级的Web微框架，它仅仅实现了Web应用的核心功能：Flask由两个主要依赖组成（提供路由、调试和Web服务器网关接口的Werkzeug和提供模板的Jinja2），对于开发的支撑系统，这两个组成已经满足开发需求了。除此之外，Flask包括了良好的文档、丰富的插件、包含开发服务器和调试器（debugger）、集成支持单元测试、RESTful请求调度、支持安全cookies、基于Unicode这些特点，能够有效加快支撑系统的开发和实现。
+
+# 支撑系统的分析和设计
+    支撑系统作为协作工具Mattermost和各种各样系统的中间层，是最为关键的一环。本章
+## 项目的整体架构
+
+## 支撑系统功能需求
+
+## 各功能命令的详细设计
+
+# 项目系统的部署和上线
+
+# 总结
+
+# 参考文献
+With the rapid development of the popularization of the Internet cloud server technology, various types of system was built and used to solve practical problems.
+Various system consisting of a group is an important part of enterprises to form, the larger system and for developers, every time I open a browser, enter the login information, for page operation is a repetitive behavior, serious waste of time, reduce the development efficiency.
+Therefore, thinking a solution, allows developers to like input command to deal with the business system becomes crucial.
+This is the purpose of this subject development and significance.
+This architecture on the collaboration tools support system can efficiently make developers handling all types of business, system can integrate all kinds of systems, reduce the developer communication cost and enhance the efficiency of the development, to meet the requirements of agile development.
+朗读 复制
+collaboration
